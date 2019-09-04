@@ -1,7 +1,11 @@
 #**Based on `igraph`**
   
-#  This function permits to obtain the minimal subgraph that connects your `sources` nodes. All you have to do is to provide a undirected connected component containing all the sources nodes and the algorithm will detected the shortest path connecting them and collapse these edges into a new subgraph.
-#`igraph` package is required.
+#  This function permits to obtain the minimal subgraph that connects 
+# your `sources` nodes. 
+# All you have to do is to provide a undirected connected component 
+# containing all the sources nodes and the algorithm will detect
+# the shortest path connecting them and collapse these edges into a new subgraph.
+# `igraph` package is required.
 
 min_conn_comp=function(G,sources){
   D=distances(G,v=sources,to=sources)
