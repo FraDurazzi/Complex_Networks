@@ -15,10 +15,10 @@ min_conn_comp=function(G,sources){
   Gmin=graph.empty(directed=FALSE)
   for(e in E(MST)){
     vs=ends(MST,e)
-    print(paste('Computing SP from ',vs[1],' to ',vs[2]))
+    #print(paste('Computing SP from ',vs[1],' to ',vs[2]))
     sp=shortest_paths(G,from=vs[1],to=vs[2],output = 'both')
     newv=sp$vpath
-    print(newv)
+    #print(newv)
     Gmin=Gmin + vertices(V(G)[newv[[1]]]$name)
     Gmin=Gmin+path(V(G)[newv[[1]]]$name)
     Gmin=delete.vertices(simplify(Gmin),degree(Gmin)==0)
